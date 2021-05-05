@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from "react";
 
-export default class RecursiveComponent extends Component {
+const RecursiveComponent = ({ components }) => {
+  const recursiveDivs = (index) => {
+    const Component = components[index]
+    if (Component) {
+      return (
+        <Component children={recursiveDivs( index + 1)} />
+      );
+    }
+  };
 
-	// write recursive method here
-
-  render() {
-    return (
-      <div>
-        {/* invoke recursive method here */}
-      </div>
-    );
-  }
+  return <div>{recursiveDivs(0)}</div>;
 };
+
+export default RecursiveComponent;
