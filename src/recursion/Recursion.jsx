@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import RecursiveComponent from './RecursiveComponent';
 
-const One = ({children}) => {
-  return <div>{children}1</div>
+const One = ({children, ...props}) => {
+  return <div {...props}>{children}1</div>
 }
-const Two = ({children}) => {
-  return <div>{children}2</div>
+const Two = ({children, ...props}) => {
+  return <div {...props}>{children}2</div>
 }
-const Three = ({children}) => {
-  return <div>{children}3</div>
+const Three = ({children, ...props}) => {
+  return <div {...props}>{children}3</div>
 }
 const components = [One,Two,Three];
 

@@ -5,7 +5,7 @@ const RecursiveComponent = ({ components }) => {
     const Component = components[index]
     if (Component) {
       return (
-        <Component children={recursiveDivs( index + 1)} />
+        <Component classNme="box" children={recursiveDivs( index + 1)} />
       );
     }
   };
